@@ -5,7 +5,7 @@ using UnityEngine;
 public class Slingshot : MonoBehaviour {
 
 
-
+    static private Slingshot S;
 
     // fields set in the Unity Inspector pane
     [Header("Set in Inspector")]
