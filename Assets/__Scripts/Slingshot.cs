@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
+    public GameObject launchpoint;
   
 
    
@@ -22,12 +23,12 @@ public class Slingshot : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-
+        print("Slingshot:OnMouseEnter()");
     }
 
     private void OnMouseExit()
     {
-
+        print("Slingshot:OnMouseEnter()");
     }
 
     private void OnMouseDown()
