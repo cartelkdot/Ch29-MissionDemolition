@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
-    public GameObject launchPoint;
-  
 
-   
-     // fields set in the Unity Inspector pane
+
+
+
+    // fields set in the Unity Inspector pane
     [Header("Set in Inspector")]
-
+    public GameObject prefabProjectile;
 
     // fields set dynamically
     [Header("Set Dynamically")]
-
+    public GameObject launchPoint;
+    public Vector3 launchPos;
+    public GameObject projectile;
+    public bool aimingMode;
 
 
     private void Awake()
     {
-        Transform launchPointTrans = transform.Find("LaunchPoint");
+        Transform launchPointTrans = transform.FindChild("LaunchPoint");
         launchPointTrans = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
 
