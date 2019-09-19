@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
-    public GameObject launchpoint;
+    public GameObject launchPoint;
   
 
    
@@ -18,17 +18,23 @@ public class Slingshot : MonoBehaviour {
 
     private void Awake()
     {
+        Transform launchPointTrans = transform.Find("LaunchPoint");
+        launchPointTrans = launchPointTrans.gameObject;
+        launchPoint.SetActive(false);
 
     }
 
     private void OnMouseEnter()
     {
-        print("Slingshot:OnMouseEnter()");
+
+        //rint("Slingshot:OnMouseEnter()");
+        launchPoint.SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        print("Slingshot:OnMouseEnter()");
+        //print("Slingshot:OnMouseEnter()");
+        launchPoint.SetActive(false);
     }
 
     private void OnMouseDown()
