@@ -10,6 +10,7 @@ public class Slingshot : MonoBehaviour {
     // fields set in the Unity Inspector pane
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
+    public float velocityMult = 8f;
 
     // fields set dynamically
     [Header("Set Dynamically")]
@@ -17,6 +18,7 @@ public class Slingshot : MonoBehaviour {
     public Vector3 launchPos;
     public GameObject projectile;
     public bool aimingMode;
+    private Rigidbody projectileRigidBody;
 
 
     private void Awake()
@@ -51,6 +53,8 @@ public class Slingshot : MonoBehaviour {
         projectile.transform.position = launchPos;
         //Set it to isKinematic for now
         projectile.GetComponent<Rigidbody>().isKinematic = true;
+        projectileRigidBody = projectile.GetComponent<Rigidbody>();
+        projectileRigidBody.isKinematic = true;
 
     }
 
